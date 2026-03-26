@@ -4,13 +4,13 @@ A Python tool for generating a set of tetrahedrons representing the volume of a 
 
 ## Usage
 
-```bash
+```
 python tetrahedralize.py [-h] [-o OUTPUT] [--skip-validation] [--inward] input
 
 options:
   -o, --output OUTPUT  Output file (default: tetras.txt)
   --skip-validation    Skip final result validation
-  --inward             Generate tetrahedrons in
+  --inward             Generate tetrahedrons covering the closed space of a model (if your model is a room)
 ```
 
 ## Overview
