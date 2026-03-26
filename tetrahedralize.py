@@ -328,7 +328,7 @@ def grow_tetra_face(face: TetrahedronFace, mesh: Mesh, other_tetras: list[Tetrah
 
     # Find valid tetrahedra built from base triangle to extend point
     for vert in candidates:
-        tetra = Tetrahedron(face.triangle.a, face.triangle.c, face.triangle.b, vert)  # note: base triangle is flipped
+        tetra = Tetrahedron(face.triangle.a, face.triangle.c, face.triangle.b, vert)  # flip base triangle for correct normal
         if is_valid_tetrahedron(mesh, other_tetras, tetra):
             return tetra
 

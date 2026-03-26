@@ -20,7 +20,7 @@ options:
 
 ### The Idea
 
-**Model tetrahedralization** is the process of decomposing a non-convex 3D mesh into a set of tetrahedra.
+**Model tetrahedralization** is the process of decomposing a non-convex 3D model into a set of tetrahedra.
 
 Just as the shape of 3D model is represented by triangles, volume can be represented by tetrahedrons.
 
@@ -34,15 +34,15 @@ Tetrahedrons can be quite useful:
 
 However, the **model tetrahedralization** - is a complex problem which has no reliable solution yet.
 
-Existing approaches like [Delaunay tetrahedralization](https://www.cs.purdue.edu/homes/tamaldey/course/531/Delaunay%283D%29.pdf) often generate many unnecessary tetrahedra, which makes them less usable for realtime simulations.
+Existing approaches like [Delaunay tetrahedralization](https://www.cs.purdue.edu/homes/tamaldey/course/531/Delaunay%283D%29.pdf) generate many unnecessary tetrahedra, which makes them less usable for video games and realtime simulations.
 
 ### The Solution
 
-My approach is:
+My approach for building tetrahedral mesh is:
 
 1. Select an arbitrary triangle on the 3D model - this is the initial face of our tetrahedral mesh
 2. "Grow" it into a tetrahedron by finding the closest vertex to the face center
-3. Repeat the process recursively for newly formed faces
+3. Repeat the process recursively for newly formed faces until all closed
 
 ## Disclaimer
 
