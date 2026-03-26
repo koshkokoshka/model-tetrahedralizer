@@ -402,7 +402,7 @@ def save_tetras(tetras: list[Tetrahedron], path: str):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", help="Input OBJ file")
+    parser.add_argument("input", help="Input .obj file")
     parser.add_argument("-o", "--output", default="tetras.txt", help="Output file (default: tetras.txt)")
     parser.add_argument("--skip-validation", action="store_true", help="Skip final result validation")
     parser.add_argument("--inward", action="store_true", help="Generate tetrahedrons covering the closed space of a model (if your model is a room)")

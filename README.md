@@ -7,6 +7,9 @@ A Python tool for generating a set of tetrahedrons representing the volume of a 
 ```
 python tetrahedralize.py [-h] [-o OUTPUT] [--skip-validation] [--inward] input
 
+positional arguments:
+  input                Input .obj file
+
 options:
   -o, --output OUTPUT  Output file (default: tetras.txt)
   --skip-validation    Skip final result validation
