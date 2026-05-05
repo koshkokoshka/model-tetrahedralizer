@@ -20,30 +20,34 @@ options:
 
 ### The Idea
 
-**Model tetrahedralization** is the process of decomposing a non-convex 3D model into a set of tetrahedra.
+**Tetrahedralization** is the process of decomposing a 3D model into a set of tetrahedra (4-point volumes).
 
-Just as the shape of 3D model is represented by triangles, volume can be represented by tetrahedrons.
+Just as the **shape** of 3D model is represented by triangles, **volume** can be represented by tetrahedrons.
 
 Tetrahedrons can be quite useful:
-- They are always convex, which makes them easier to work with
-- They are well-suited for collision detection algorithms such as GJK
-- They can be used for space partitioning (similar to BSP trees)
-- Theoretically, skeletal animation can be applied to tetrahedral meshes in the same way as we animate 3D models
+- They are **always convex**, which makes them easier to work with
+- They are **well-suited for collision detection** algorithms such as GJK
+- They **can be converted into a tetrahedral graph** and used for space partitioning (similar to BSP trees)
+- They **can be animated** in the same way as we animate 3D models (they even share the same vertices as the model faces)
 
 ### The Problem
 
-However, the **model tetrahedralization** - is a complex problem which has no reliable solution yet.
+However, robust tetrahedralization of arbitrary meshes is still a hard problem.
 
-Existing approaches like [Delaunay tetrahedralization](https://www.cs.purdue.edu/homes/tamaldey/course/531/Delaunay%283D%29.pdf) generate many unnecessary tetrahedra, which makes them less usable for video games and realtime simulations.
+Existing approaches like [Delaunay tetrahedralization](https://www.cs.purdue.edu/homes/tamaldey/course/531/Delaunay%283D%29.pdf) tend to generate many excessive tetrahedra, which makes them inefficient for realtime simulations (e.g. video games).
 
 ### The Solution
 
-My approach for building tetrahedral mesh is:
+My approach uses a simple growth-based heuristic:
 
-1. Select an arbitrary triangle on the 3D model - this is the initial face of our tetrahedral mesh
+1. Pick an arbitrary triangle from the model - this is the initial face of our tetrahedral mesh
 2. "Grow" it into a tetrahedron by finding the closest vertex to the face center
-3. Repeat the process recursively for newly formed faces until all closed
+3. Recursively "grow" newly created faces
+4. Continue until the volume is closed
+
+#### Visualization
+<video src="demo/tetras.mp4" width="320" height="240" controls></video>
 
 ## Disclaimer
 
-**Please note that all code in this repository is not production-ready solution. This approach is not sufficiently tested and optimized to be reliable and stable for every possible geometry. I'm just experimenting and sharing the results in public domain.**
+**Please note that all code in this repository is not production-ready solution. This approach is not sufficiently tested and optimized to be reliable and stable on all geometry types. I'm just experimenting and sharing the results in public domain.**
