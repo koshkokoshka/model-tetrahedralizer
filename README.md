@@ -46,7 +46,8 @@ My approach uses a simple growth-based heuristic:
 4. Continue until the volume is closed
 
 #### Visualization
-<video src="demo/tetras.mp4" width="320" height="240" controls></video>
+
+https://github.com/user-attachments/assets/1d3bd834-7e25-4a1a-bf79-880dc06c6aaa
 
 ## Disclaimer
 
