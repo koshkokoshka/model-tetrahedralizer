@@ -2,6 +2,8 @@
 
 A Python tool for generating a set of tetrahedrons representing the volume of a 3D model.
 
+![visualization](demo/tetras.gif)
+
 ## Usage
 
 ```
@@ -45,9 +47,10 @@ My approach uses a simple growth-based heuristic:
 3. Recursively "grow" newly created faces
 4. Continue until the volume is closed
 
-#### Visualization
-
-https://github.com/user-attachments/assets/1d3bd834-7e25-4a1a-bf79-880dc06c6aaa
+<details>
+    <summary>Visualization</summary>
+    https://github.com/user-attachments/assets/1d3bd834-7e25-4a1a-bf79-880dc06c6aaa
+</details>
 
 ## Disclaimer
 
